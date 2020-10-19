@@ -42,7 +42,7 @@ function App() {
           value={selectedLocale}
           onChange={(event) => setLocale(event.target.value as Locale)}>
           {Object.keys(supportedLocales).map((languageCode) => (
-            <option value={languageCode}>
+            <option key={languageCode} value={languageCode}>
               {supportedLocales[languageCode]}
             </option>
           ))}
