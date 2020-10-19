@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import logo from './assets/logo.svg'
+import './assets/App.css'
 
 import { useLocale } from './i18n'
 import { Locale } from './i18n/interface'
@@ -26,7 +26,7 @@ function App() {
   if (setLocale === null) throw Error('setLocale 이 비어 있습니다.')
 
   return (
-    <div className='App'>
+    <>
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         {title === '불러오는 중...' ? (
@@ -48,7 +48,7 @@ function App() {
           ))}
         </select>
       </header>
-    </div>
+    </>
   )
 }
 
