@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import logo from './assets/logo.svg'
-import './assets/App.css'
 
 import { useLocale } from './i18n'
 import { Locale } from './i18n/interface'
+import { Header, Link, Logo } from './styles/styled'
 
 function App() {
   const { locale, selectedLocale, supportedLocales, setLocale } = useLocale(
@@ -26,29 +26,27 @@ function App() {
   if (setLocale === null) throw Error('setLocale 이 비어 있습니다.')
 
   return (
-    <>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        {title === '불러오는 중...' ? (
-          <p>{locale(title)}</p>
-        ) : (
-          <a className='App-link' href={docs[0]} rel='noopener noreferrer'>
-            {locale(title)}
-          </a>
-        )}
-        <label htmlFor='change-language'>{locale('언어 변경하기:')}</label>
-        <select
-          id='change-language'
-          value={selectedLocale}
-          onChange={(event) => setLocale(event.target.value as Locale)}>
-          {Object.keys(supportedLocales).map((languageCode) => (
-            <option key={languageCode} value={languageCode}>
-              {supportedLocales[languageCode]}
-            </option>
-          ))}
-        </select>
-      </header>
-    </>
+    <Header>
+      <Logo src={logo} alt='logo' />
+      {title === '불러오는 중...' ? (
+        <p>{locale(title)}</p>
+      ) : (
+        <Link href={docs[0]} rel='noopener noreferrer'>
+          {locale(title)}
+        </Link>
+      )}
+      <label htmlFor='change-language'>{locale('언어 변경하기:')}</label>
+      <select
+        id='change-language'
+        value={selectedLocale}
+        onChange={(event) => setLocale(event.target.value as Locale)}>
+        {Object.keys(supportedLocales).map((languageCode) => (
+          <option key={languageCode} value={languageCode}>
+            {supportedLocales[languageCode]}
+          </option>
+        ))}
+      </select>
+    </Header>
   )
 }
 
