@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import App from './App'
+import { GlobalStyle } from './styles/styled'
 
 import Provider from './i18n'
 
@@ -11,6 +11,7 @@ function Index() {
   const [locale, setLocale] = useState<Locale>(navigator.language as Locale)
   return (
     <Provider value={{ locale, setLocale }}>
+      <GlobalStyle />
       <App />
     </Provider>
   )
