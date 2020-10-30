@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import logo from './assets/logo.svg'
 
-import { useLocale } from './i18n'
-import { Locale } from './i18n/interface'
+import { useLocale } from './i18n/useLocale'
+import { Intro, Locale } from './i18n/interface'
 import { Header, Link, Logo } from './styles/styled'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     'intro'
   )
 
-  type Phrases = Parameters<typeof locale>[0]
+  type Phrases = keyof Intro
   const [title, setTitle] = useState<Phrases>('불러오는 중...')
 
   useEffect(() => {

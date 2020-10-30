@@ -1,4 +1,21 @@
-import I18n from './interface'
+import I18n, { Locale } from './interface'
+
+export const supportedLocales = {
+  ko: '한국어',
+  en: 'English',
+  es: 'Español',
+  id: 'Bahasa Indonesia',
+  ja: '日本語',
+  km: 'ភាសាខ្មែរ',
+  lt: 'Lietuvių',
+  nl: 'Nederlands',
+  pl: 'polski',
+  pt: 'Português',
+  'pt-BR': 'Português (Brazil)',
+  th: 'ภาษาไทย',
+  de: 'Deutsch',
+  'zh-Hans': '中文 (简体)',
+} as Record<Locale, string>
 
 const pages: I18n = {
   intro: {
