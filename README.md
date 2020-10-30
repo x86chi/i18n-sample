@@ -1,5 +1,7 @@
 # i18n sample project
 
+![CI](https://github.com/x86chi/i18n-sample/workflows/CI/badge.svg)
+
 [나인 크로니클] 론처의 국제화 관리를 위해 작성했던 코드를 재구성했습니다.
 
 [나인 크로니클]: https://nine-chronicles.com/
